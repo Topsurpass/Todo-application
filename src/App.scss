@@ -1,0 +1,140 @@
+@mixin centeredFlex{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@mixin centeredGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0px auto;
+  place-items: center;
+}
+.App-header{
+  background-color: rgb(27, 24, 27);
+  height: 100vh;
+  background-image: url('/images/mobileDark.jpg');
+  background-repeat: no-repeat;
+  background-size:contain;
+  @include centeredFlex();
+  flex-direction: column;
+}
+.lightBg{
+  background-color: rgb(230, 211, 230);
+  min-height: 100vh;
+  background-image: url('/images/mobileLight.jpg');
+  background-repeat: no-repeat;
+  background-size:contain;
+  @include centeredFlex();
+  flex-direction: column;
+}
+.dayAndNight{
+  @include centeredFlex();
+  justify-content: space-between;
+  width:80%;
+  h1{
+    color:white;
+  }
+  .toggle{
+    display:none;
+  }
+}
+.inputTodo{
+  height:8vh;
+  width:80%;
+  background-color: #3e4450;
+  @include centeredFlex();
+  border-radius: 5px;
+  .text{
+    width:90%;
+    height: 90%;
+    background-color: #3e4450;
+    border: 0px;
+    outline: none;
+    color:white;
+    padding-left:10px;
+  }
+  .check{
+    margin-left: 18px;
+  }
+}
+.listPara{
+  color:white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-left: 10px;
+}
+.save{
+  font-size: 25px;
+  margin-right:10px;
+  color:white;
+}
+.listTodos{
+  height:40vh;
+  background-color: grey;
+  width:80%;
+  border-radius: 5px 5px 0px 0px;
+  overflow-y: scroll;
+  h5{
+    margin-right:10px;
+    color:grey;
+  }
+  p{
+    color:white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+}
+.container{
+  background-color: #3e4450;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  word-break: break-all;
+  min-height: 8vh;
+}
+.flexIt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cancel{
+ margin:0% 5%;
+}
+#todoContainer{
+  min-height:8vh;
+  background-color: #3e4450;
+  width:80%;
+  margin-top: 2px;
+  border-radius: 0px 0px 5px 5px;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  word-break: break-all;
+}
+
+.itemLeft,.clearCompleted{
+  //margin-left: 15px;
+  color: white;
+}
+.clearCompleted{
+  cursor: pointer;
+}
+.saveCheck{
+  margin-left:15px;
+}
+
+.developer{
+  color: white;
+}
+
+@media only screen and (min-width:500px) {
+  .App-header{
+    background-image: url('/images/desktopDark.jpg');
+  }
+  .lightBg{
+    background-image: url('/images/desktopLight.jpg');
+  }
+  .saveCheck{
+    margin-left:30px;
+  }
+}
